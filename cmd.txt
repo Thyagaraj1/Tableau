@@ -33,7 +33,7 @@ You can suppress this message by setting them explicitly. Run the
 following command and follow the instructions in your editor to edit
 your configuration file:
 
-    git config --global --edit  in unix press esc and :wq to save the file then  hit Enter
+    git config --global --edit   press esc and :wq to save the file then  hit Enter
 
 After doing this, you may fix the identity used for this commit with:
 
@@ -116,3 +116,41 @@ While opening file "/c/Users/taralilk/.gitconfig"
 
 Swap file "~/.gitconfig.swp" already exists!
 [O]pen Read-Only, (E)dit anyway, (R)ecover, (D)elete it, (Q)uit, (A)bort:
+
+
+
+
+
+
+
+
+Error
+=======
+C:\Users\taralilk\OneDrive - Cisco\Personnel\IMPORTANT\DS\T\Data>git push -u origin main
+Enumerating objects: 37, done.
+Counting objects: 100% (37/37), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (35/35), done.
+error: RPC failed; HTTP 400 curl 92 HTTP/2 stream 3 was not closed cleanly: CANCEL (err 8)
+send-pack: unexpected disconnect while reading sideband packet
+Writing objects: 100% (37/37), 440.28 MiB | 2.64 MiB/s, done.
+Total 37 (delta 10), reused 0 (delta 0), pack-reused 0
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
+
+Error code 8 -->Network error connect to different network
+
+git config --global http.version HTTP/1.1
+git push -u main
+
+git config --global http.version HTTP/2
+
+
+
+error code 2 while cloning -->buffer 
+
+use below commands
+==================
+git config --global http.version HTTP/1.1
+git config --global http.postBuffer 157286400
+git clone repo_URL
